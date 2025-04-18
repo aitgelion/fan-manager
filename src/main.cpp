@@ -107,7 +107,7 @@ void setup() {
 
   if (!wm.autoConnect("FanMan")) {
     Serial.println("Failed to connect");
-    wifi_count_on = -1;
+    wifi_count_on = 0;
   } else {
     // Configure Server
     setup_server();
@@ -135,7 +135,7 @@ void loop() {
     delay(20);
   }
 
-  if (wifi_count_on > 0) {
+  if (wifi_count_on != 0) {
     ElegantOTA.loop();
   }
 }
