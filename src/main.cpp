@@ -245,7 +245,6 @@ void manage_fans() {
   }
 
   float tmp_diff = 0;
-
   uint8_t pwm_new = 0;
 
   for (uint8_t i = 0; i < fan_number; i++) {
@@ -255,6 +254,7 @@ void manage_fans() {
       continue;
     }
 
+    pwm_new = 0;
     // Get temperature from sensor
     fans[i].tmp = sensors.getTempC(fans[i].tmp_addr);
     
